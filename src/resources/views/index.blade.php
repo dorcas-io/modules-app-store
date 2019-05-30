@@ -32,7 +32,7 @@
                          		<div class="text-muted">@{{ app.description }}</div>
                          		<div class="d-flex align-items-center pt-5 mt-auto">
                          			<div>
-                         				<a href="@{{app.homepage_url}}" class="text-default" v-html="app.homepage_url"></a>
+                         				<a v-bind:href="app.homepage_url" class="text-default" v-html="app.homepage_url"></a>
                          				<!-- <small class="d-block text-muted">3 days ago</small> -->
                          			</div>
                          			<div class="ml-auto text-muted">
@@ -114,11 +114,14 @@
                     }).catch(function (error) {
                         var message = '';
                         context.is_fetching = false;
+                        console.log(error.response)
                         if (error.response) {
                             // The request was made and the server responded with a status code
                             // that falls out of the range of 2xx
-                            var e = error.response.data.errors[0];
-                            message = e.title;
+                            //var e = error.response.data.errors[0];
+                            //message = e.title;
+                            var e = error.response;
+                            message = e.data.message;
                         } else if (error.request) {
                             // The request was made but no response was received
                             // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
@@ -162,6 +165,7 @@
                         }).catch(function (error) {
                             let message = '';
                             if (error.response) {
+                            	console.log(error.response)
                                 // The request was made and the server responded with a status code
                                 // that falls out of the range of 2xx
                                 var e = error.response.data.errors[0];

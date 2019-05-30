@@ -20,11 +20,13 @@ class ModulesAppStoreController extends Controller {
         $this->data = [
             'page' => ['title' => config('modules-app-store.title')],
             'header' => ['title' => config('modules-app-store.title')],
-            'selectedMenu' => 'app-store'
+            'selectedMenu' => 'addons',
+            'submenuConfig' => 'navigation-menu.modules-app-store.sub-menu',
+            'submenuAction' => ''
         ];
     }
 
-    public function index()
+    public function index(Request $request, Sdk $sdk)
     {
     	//$this->data['filter'] = 'installed_only';
         //$this->data['filter'] = 'without_installed';
