@@ -21,7 +21,7 @@ class ModulesAppStoreController extends Controller {
             'page' => ['title' => config('modules-app-store.title')],
             'header' => ['title' => config('modules-app-store.title')],
             'selectedMenu' => 'addons',
-            'submenuConfig' => 'navigation-menu.modules-app-store.sub-menu',
+            'submenuConfig' => 'navigation-menu.addons.sub-menu.modules-app-store.sub-menu',
             'submenuAction' => ''
         ];
     }

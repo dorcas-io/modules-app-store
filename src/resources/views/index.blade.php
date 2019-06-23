@@ -87,15 +87,15 @@
                          		</div>
                          	</div>
                          </div>
-						<ul class="pagination justify-content-end" v-if="apps2.length > 0 && !is_fetching2 && typeof meta2.pagination !== 'undefined' && meta2.pagination.total_pages > 1">
-							<!--TODO: Handle situations where the number of pages > 10; we need to limit the pages displayed in those cases -->
-							<li class="page-item"><a class="page-link" href="#!" v-on:click.prevent="changePage(1,'apps')">First</a></li>
-							<li class="page-item" v-for="n in meta2.pagination.total_pages" v-bind:class="{active: n === page_number2}">
-							    <a class="page-link" href="#" v-on:click.prevent="changePage(n,'apps')" v-if="n !== page_number2">@{{ n }}</a>
-							    <a class="page-link" href="#" v-else>@{{ n }}</a>
-							</li>
-							<li class="page-item"><a class="page-link" href="#!" v-on:click.prevent="changePage(meta2.pagination.total_pages,'apps')">Last</a></li>
-						</ul>
+        						<ul class="pagination justify-content-end" v-if="apps2.length > 0 && !is_fetching2 && typeof meta2.pagination !== 'undefined' && meta2.pagination.total_pages > 1">
+        							<!--TODO: Handle situations where the number of pages > 10; we need to limit the pages displayed in those cases -->
+        							<li class="page-item"><a class="page-link" href="#!" v-on:click.prevent="changePage(1,'apps')">First</a></li>
+        							<li class="page-item" v-for="n in meta2.pagination.total_pages" v-bind:class="{active: n === page_number2}">
+        							    <a class="page-link" href="#" v-on:click.prevent="changePage(n,'apps')" v-if="n !== page_number2">@{{ n }}</a>
+        							    <a class="page-link" href="#" v-else>@{{ n }}</a>
+        							</li>
+        							<li class="page-item"><a class="page-link" href="#!" v-on:click.prevent="changePage(meta2.pagination.total_pages,'apps')">Last</a></li>
+        						</ul>
 		            </div>
 		            <div class="col s12" v-if="apps2.length === 0 && !is_fetching">
 		                @component('layouts.blocks.tabler.empty-card')
