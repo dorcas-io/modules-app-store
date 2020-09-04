@@ -11,10 +11,10 @@ class ModulesAppStoreServiceProvider extends ServiceProvider {
 		$this->loadViewsFrom(__DIR__.'/resources/views', 'modules-app-store');
 		$this->publishes([
 			__DIR__.'/config/modules-app-store.php' => config_path('modules-app-store.php'),
-		], 'config');
+		], 'dorcas-modules');
 		/*$this->publishes([
 			__DIR__.'/assets' => public_path('vendor/modules-app-store')
-		], 'public');*/
+		], 'dorcas-modules');*/
 	}
 
 	public function register()
